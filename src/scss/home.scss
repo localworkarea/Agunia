@@ -1,0 +1,418 @@
+.page {
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180.00deg, rgb(13, 79, 153),rgb(46, 131, 184) 29%,rgb(67, 181, 222) 54.5%,rgb(201, 244, 255) 79%,rgb(255, 255, 255) 100%),rgb(255, 255, 255);
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  // .main__cloud
+  &__cloud {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  // .main__body
+  &__body {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    align-items: flex-end;
+    grid-template-columns: 1fr auto 1fr;
+    height: 100%;
+    @media (min-height: toEm(1100.98)){
+      align-items: center;
+    }
+  }
+  // .main__card
+  &__card {
+    position: relative;
+    grid-column: 2/3;
+    @include adaptiveValue("padding-top", 30, 90,0,768,480);
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+    @media (min-width:$mobileSmall){
+      padding-bottom: toRem(130);
+    }
+    @media (max-width:$mobileSmall){
+       padding-bottom: toRem(213); 
+    }
+  }
+  // .main__baby
+  &__baby {
+    position: absolute;
+    &.baby-01 {
+      grid-column: 1/2;
+      @include adaptiveValue("right", -100, -91,0,1920,768.98);
+      @media (min-width:$mobileSmall){
+        bottom: toRem(35);
+      }
+      @media (max-width:$mobileSmall){
+          bottom: -10%;
+          right: toRem(-200) !important;
+      }
+    }
+    &.baby-02 {
+      grid-column: 3/4;
+      @include adaptiveValue("left", 21, -23,0,1920,768.98);
+      @media (min-width:$mobileSmall){
+         bottom: toRem(54); 
+      }
+      @media (max-width:$mobileSmall){
+        bottom: -8%;
+        left: toRem(-168) !important;
+      }
+    }
+  }
+  &__baby-01,
+  &__baby-02 {
+    max-width: unset !important;
+  }
+	// .main__baby-01
+	&__baby-01 {
+    @include adaptiveValue("width", 533, 399,2,1920,1440.98);
+    @include adaptiveValue("width", 399, 267,3,1440.98,480);
+	}
+  // .main__baby-02
+  &__baby-02 {
+    @include adaptiveValue("width", 499, 370,2,1920,1440.98);
+    @include adaptiveValue("width", 370, 254,3,1440.98,480);
+  }
+	// .main__baby-think
+	&__baby-think {
+    @include adaptiveValue("width", 140, 100,0,1920,1440);
+    @media (min-width:$mobile){
+      position: absolute;
+      top:11%;
+      right:11%;
+    }
+    @media (max-width:$mobile){
+       display: none; 
+    }
+	}
+  // .main__cloud-front
+  &__cloud-front {
+    position: absolute;
+    bottom: 0;
+    @media (min-width:$mobileSmall){
+      width: 100%;
+    }
+    @media (max-width:$mobileSmall){
+       z-index: -1; 
+       width: 290%;
+       max-width: unset !important;
+    }
+  }
+}
+
+.cloud {
+  img {
+    position: absolute;
+  }
+  // .cloud__cloud-top
+  &__cloud-top {
+    z-index: 1;
+    // .cloud__cloud-top--01
+    &--01 {
+      @include adaptiveValue("left", -126, -430,2,1920,768.98);
+      @include adaptiveValue("left", -430, -205,3,768.98,480);
+      @include adaptiveValue("width", 654, 401,0,768,480);
+      @media (min-width:$mobileSmall){
+         top: -15%; 
+      }
+      @media (max-width:$mobileSmall){
+         top: -4%; 
+      }
+    }
+    // .cloud__cloud-top--02
+    &--02 {
+      @media (min-width:$mobile){
+        top: 50%;
+        left: 0%;
+        transform: translate(-41%, -50%);
+        width: toRem(368);
+      }
+      @media (max-width:$mobile){
+         display: none; 
+      }
+    }
+    // .cloud__cloud-top--03
+    &--03 {
+      top: 10%;
+      right: 0;
+      @include adaptiveValue("right", -235, -430,2,1920,768.98);
+      @include adaptiveValue("right", -430, -265,3,768.98,480);
+      @include adaptiveValue("width", 582, 443,0,768,480);
+    }
+  }
+  // .cloud__star
+  &__star {
+    z-index: 2;
+    // .cloud__star--01
+    &--01 {
+      @include adaptiveValue("width", 30, 25,2,1920,768.98);
+      @include adaptiveValue("width", 25, 20,3,768.98,480);
+      @media (min-width:$mobile){
+        top: 35%;
+        left: 7%;
+      }
+      @media (max-width:$mobile) and (min-width:$mobileSmall){
+         top: 11%;
+         left: 15%; 
+      }
+      @media (max-width:$mobileSmall){
+        top: 9%;
+        left: 17%; 
+      }
+    }
+    // .cloud__star--02
+    &--02 {
+      @media (min-width:$mobile){
+        top: 42%;
+        left: 12%;
+      }
+      @media (max-width:$mobile){
+         display: none; 
+      }
+    }
+    // .cloud__star--03
+    &--03 {
+      @include adaptiveValue("width", 32, 26,0,768,480);
+      @media (min-width:$mobile){
+        top: 9%;
+        left: 32%;
+      }
+      @media (max-width:$mobile) and (min-width:$mobileSmall){
+        top: 5%;
+        left: 6%;
+      }
+      @media (max-width:$mobileSmall){
+         top: 5%;
+         left: 9%; 
+      }
+    }
+    // .cloud__star--04
+    &--04 {
+      @media (min-width:toEm(1440.98)){
+        top: 8%;
+        right: 13%;
+      }
+      @media (max-width: toEm(1440.98)){
+          display: none;
+      }
+    }
+  }
+  // .cloud__cloud-bottom
+  &__cloud-bottom {
+    bottom: 0;
+    @media (min-width:$mobileSmall){
+       width: 100%; 
+    }
+    @media (max-width:$mobileSmall){
+      width: 290%;
+      max-width: unset !important;
+    }
+  }
+  // .cloud__sun
+  &__sun {
+    z-index: 3;
+    @include adaptiveValue("top", 35, -30,2,1920,768.98);
+    @include adaptiveValue("top", -30, 32,3,768.98,480);
+    @include adaptiveValue("right", 348, 25,2,1920,768.98);
+    @include adaptiveValue("right", 25, 15,3,768.98,480);
+    @include adaptiveValue("width", 239, 124,0,768,480);
+  }
+}
+
+.card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  @include adaptiveValue("min-width", 630, 472,2,1920,1440.98);
+  @include adaptiveValue("min-width", 472,285,3,1440.98,320);
+  // .card__head
+  &__head {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include adaptiveValue("margin-bottom", 72, 50,0,768,480);
+  }
+  // .card__logo
+  &__logo {
+    position: relative;
+    z-index: 2;
+    @include adaptiveValue("width", 236, 177,2,1920,1440.98);
+    @include adaptiveValue("width", 177, 132,3,1440.98,480);
+    @include adaptiveValue("margin-bottom", 16, 9,0,768,480);
+  }
+	// .card__cloud
+	&__cloud {
+    position: absolute;
+    bottom: -16%;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    @include adaptiveValue("max-width", 630, 472,2,1920,1440.98);
+    @include adaptiveValue("max-width", 472,350,3,1440.98,480 );
+	}
+  // .card__title
+  &__title {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    font-family: 'Marvin';
+    font-weight: 500;
+    line-height: normal;
+    @include adaptiveValue("max-width", 471, 353,2,1920,1440.98);
+    @include adaptiveValue("max-width", 353, 262,3,1440.98,480);
+
+    @include adaptiveValue("font-size", 28, 21,2,1920,1440.98);
+    @include adaptiveValue("font-size", 21, 16,3,1440.98,480);
+  }
+  // .card__main
+  &__main {
+    position: relative;
+    width: 100%;
+
+    @include adaptiveValue("max-width", 592, 444,2,1920,1440.98);
+    @include adaptiveValue("max-width", 444, 350,3,1440.98,320);
+
+    @include adaptiveValue("margin-top", -109, -91,2,1920,1440.98);
+    @include adaptiveValue("margin-top", -91, -87,3,1440.98,480);
+
+    @include adaptiveValue("padding-top", 103, 57,2,1920,1440.98);
+    @include adaptiveValue("padding-top", 57, 80,3,1440.98,480);
+    @include adaptiveValue("padding-left", 70, 40,2,1920,768.98);
+    @include adaptiveValue("padding-left", 40, 26,3,768.98,480);
+    @include adaptiveValue("padding-right", 70, 40,2,1920,768.98);
+    @include adaptiveValue("padding-right", 40, 26,3,768.98,480);
+    @include adaptiveValue("padding-bottom", 75, 61,0,768,480);
+
+    @include adaptiveValue("border-radius", 50, 34,0,768,480);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    box-shadow: 0px 6px 40px 0px rgba(67, 164, 205, 0.6);
+  }
+  // .card__subtitle
+  &__subtitle {
+    @include adaptiveValue("font-size", 30, 22,2,1920,1440.98);
+    @include adaptiveValue("font-size", 22, 24,3,1440.98,480);
+    font-weight: 700;
+    line-height: calc(36/30);
+    margin-bottom: toRem(16);
+  }
+  // .card__list
+  &__list {
+  }
+  // .card__li
+  &__li {
+    padding-left: toRem(19);
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: toRem(8);
+      left: 0;
+      width: toRem(9);
+      height: toRem(9);
+      border-radius: 50%;
+      box-shadow: 0px 3px 5px 0px rgba(0, 169, 224, 0.35);
+      background: linear-gradient(180.00deg, rgb(64, 244, 255),rgb(0, 148, 232) 100%);
+    }
+    &:not(:last-child) {
+      margin-bottom: toRem(8);
+    }
+  }
+  // .card__li-txt
+  &__li-txt {
+    @include adaptiveValue("font-size", 18, 14,2,1920,1440.98);
+    @include adaptiveValue("font-size", 14, 18,3,1440.98,480);
+    font-weight: 500;
+    line-height: calc(22/18);
+  }
+  // .card__button
+  &__link {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    transition: transform .3s ease;
+
+    border-radius: toRem(60);
+    box-shadow: 0px 6px 10px 0px rgba(60, 207, 255, 0.3);
+    background: linear-gradient(180.00deg, rgb(50, 115, 213),rgb(34, 115, 209) 100%);
+    width: toRem(298);
+    height: toRem(70);
+    text-align: center;
+    font-family: 'Marvin';
+    font-weight: 500;
+    line-height: normal;
+    font-size: toRem(20);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   z-index: 0;
+    //   display: block;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   padding: toRem(5) toRem(3);
+    //   border-radius: 40px;
+    //   filter: blur(15px);
+    //   background: linear-gradient(0.00deg, rgba(255, 255, 255, 0),rgb(255, 255, 255) 100%);
+    //   opacity: 0.7;
+    // }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    span {
+      position: relative;
+      z-index: 3;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        transform: translateY(40%);
+      }
+    }
+    @media (max-width:$mobileSmall){
+       left: 50%;
+       transform: translate(-50%,50%); 
+    }
+    @media (max-width:toEm(370)){
+       width: toRem(280); 
+    }
+  }
+}
+
+  
+.logo {
+
+  // .logo__elipse
+  &__elipse {
+  }
+  // .logo__img
+  &__img {
+  }
+}
