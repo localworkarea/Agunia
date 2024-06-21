@@ -280,6 +280,7 @@
 
     @include adaptiveValue("font-size", 28, 21,2,1920,1440.98);
     @include adaptiveValue("font-size", 21, 16,3,1440.98,480);
+    padding-bottom: toRem(5);
   }
   // .card__main
   &__main {
@@ -305,6 +306,13 @@
     margin-right: auto;
     background-color: white;
     box-shadow: 0px 6px 40px 0px rgba(67, 164, 205, 0.6);
+    .card-txt {
+      @include adaptiveValue("font-size", 18, 14,2,1920,1440.98);
+      @include adaptiveValue("font-size", 14, 18,3,1440.98,480);
+      font-weight: 500;
+      line-height: calc(22/18);
+      margin-bottom: toRem(10);
+    }
   }
   // .card__subtitle
   &__subtitle {
@@ -312,25 +320,25 @@
     @include adaptiveValue("font-size", 22, 24,3,1440.98,480);
     font-weight: 700;
     line-height: calc(36/30);
-    margin-bottom: toRem(16);
+    margin-bottom: toRem(10);
   }
   // .card__list
   &__list {
   }
   // .card__li
   &__li {
-    padding-left: toRem(19);
+    padding-left: toRem(25);
     position: relative;
     &::before {
-      content: '';
+      content: '💙';
       position: absolute;
-      top: toRem(8);
+      top: toRem(3);
       left: 0;
       width: toRem(9);
       height: toRem(9);
-      border-radius: 50%;
-      box-shadow: 0px 3px 5px 0px rgba(0, 169, 224, 0.35);
-      background: linear-gradient(180.00deg, rgb(64, 244, 255),rgb(0, 148, 232) 100%);
+      // border-radius: 50%;
+      // box-shadow: 0px 3px 5px 0px rgba(0, 169, 224, 0.35);
+      // background: linear-gradient(180.00deg, rgb(64, 244, 255),rgb(0, 148, 232) 100%);
     }
     &:not(:last-child) {
       margin-bottom: toRem(8);

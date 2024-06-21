@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Exo+2:500,700&display=swap);
 @font-face {
   font-family: Marvin;
@@ -254,7 +255,8 @@ body {
   text-align: center;
   font-family: Marvin;
   font-weight: 500;
-  line-height: normal
+  line-height: normal;
+  padding-bottom: .3125rem
 }
 .card__main {
   position: relative;
@@ -264,25 +266,27 @@ body {
   background-color: #fff;
   box-shadow: 0 6px 40px 0 rgba(67,164,205,.6)
 }
+.card__main .card-txt {
+  font-weight: 500;
+  line-height: 1.2222222222;
+  margin-bottom: .625rem
+}
 .card__subtitle {
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1rem
+  margin-bottom: .625rem
 }
 .card__li {
-  padding-left: 1.1875rem;
+  padding-left: 1.5625rem;
   position: relative
 }
 .card__li::before {
-  content: "";
+  content: "💙";
   position: absolute;
-  top: .5rem;
+  top: .1875rem;
   left: 0;
   width: .5625rem;
-  height: .5625rem;
-  border-radius: 50%;
-  box-shadow: 0 3px 5px 0 rgba(0,169,224,.35);
-  background: linear-gradient(180deg,#40f4ff,#0094e8 100%)
+  height: .5625rem
 }
 .card__li:not(:last-child) {
   margin-bottom: .5rem
@@ -466,6 +470,9 @@ body {
   .card__main {
     padding-right: 4.375rem
   }
+  .card__main .card-txt {
+    font-size: 1.125rem
+  }
   .card__subtitle {
     font-size: 1.875rem
   }
@@ -550,6 +557,9 @@ body {
   }
   .card__main {
     border-radius: 2.125rem
+  }
+  .card__main .card-txt {
+    font-size: 1.125rem
   }
   .card__subtitle {
     font-size: 1.5rem
@@ -916,6 +926,16 @@ body {
       padding-top: calc(3.5625rem + 2.875 * (100vw - 90.06125rem)/ 29.93875)
     }
   }
+  @supports (font-size:clamp(0.875rem ,0.1229541564rem + 0.835038203vw ,1.125rem)) {
+    .card__main .card-txt {
+      font-size: clamp(.875rem ,.1229541564rem + .835038203vw ,1.125rem)
+    }
+  }
+  @supports not (font-size:clamp(0.875rem ,0.1229541564rem + 0.835038203vw ,1.125rem)) {
+    .card__main .card-txt {
+      font-size: calc(.875rem + .25 * (100vw - 90.06125rem)/ 29.93875)
+    }
+  }
   @supports (font-size:clamp(1.375rem ,-0.1290916872rem + 1.670076406vw ,1.875rem)) {
     .card__subtitle {
       font-size: clamp(1.375rem ,-.1290916872rem + 1.670076406vw ,1.875rem)
@@ -1016,6 +1036,16 @@ body {
   @supports not (padding-top:clamp(3.5625rem ,5.7180170243rem + -2.393390081vw ,5rem)) {
     .card__main {
       padding-top: calc(5rem + -1.4375 * (100vw - 30rem)/ 60.06125)
+    }
+  }
+  @supports (font-size:clamp(0.875rem ,1.249872526rem + -0.4162417532vw ,1.125rem)) {
+    .card__main .card-txt {
+      font-size: clamp(.875rem ,1.249872526rem + -.4162417532vw ,1.125rem)
+    }
+  }
+  @supports not (font-size:clamp(0.875rem ,1.249872526rem + -0.4162417532vw ,1.125rem)) {
+    .card__main .card-txt {
+      font-size: calc(1.125rem + -.25 * (100vw - 30rem)/ 60.06125)
     }
   }
   @supports (font-size:clamp(1.375rem ,1.562436263rem + -0.2081208766vw ,1.5rem)) {
